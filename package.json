@@ -1,0 +1,27 @@
+{
+  "name": "dnp-nuke-bot",
+  "version": "1.0.0",
+  "description": "Nuker bot for the server DNP date and play",
+  "main": "index.js",
+  "pnpm": "pnpm index.js"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NNKTV28/dnp-nuke-bot.git"
+  },
+  "keywords": [
+    "discord.js",
+    "nukebot",
+    "discord",
+    "nuke",
+    "anti-cp"
+  ],
+  "author": "NNKtv28, Jess",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NNKTV28/dnp-nuke-bot/issues"
+  },
+  "homepage": "https://github.com/NNKTV28/dnp-nuke-bot#readme"
+}
