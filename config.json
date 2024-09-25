@@ -1,0 +1,12 @@
+{
+    "channels": {
+        "number_of_channels": 10
+    },
+    
+    "messagesSettings": {
+        "nuked_server_name": "nuked-by-mamipig",
+        "nuked_channel_name": "nuked-by-mamipig",
+        "spammed_message": "nuked-by-mamipig",
+        "nuked_role_name": "nuked-by-mamipig"
+    }
+}
