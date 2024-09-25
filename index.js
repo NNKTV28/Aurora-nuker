@@ -1,19 +1,41 @@
-const discord = require('discord.js');
+const { Client, GatewayIntentBits } = require('discord.js');
 const logger = require('pino')()
 require("dotenv").config();
 const fs = require('fs');
 
-try {
-    logger.info('Starting up...');
-    client = new discord.Client();
-    client.commands = new discord.Collection();
-} catch (error) {
-    logger.error(error);
-}
+logger.info('Starting up...');
 
-require('./events/ready.js')(client); // Load ready event
+// intents
+client = new Client({ intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.MessageContent,
+    GatewayIntentBits.GuildMembers,
+], });
 
+client.on('guildCreate', guild => {
+    logger.info(`Joined guild: ${guild.name}`);
+});
+client.on('ready', () => {
+    logger.info('Logged in as ${client.user.tag}!');
+});
 
+client.on('message', msg => {
+    if (!msg.content.startsWith(process.env.PREFIX) || msg.author.bot) return;
+    const args = msg.content.slice(process.env.PREFIX.length).trim().split(/ +/);
+    const command = args.shift().toLowerCase();
+    if (!client.commands.has(command)) return;
+    try {
+        client.commands.get(command).execute(msg, args);
+    } catch (error) {
+        logger.error(error);
+        msg.reply('there was an error trying to execute that command!');
+    }
+    logger.info(`${msg.author.tag} executed ${command}`);
+    logger.info(`Args: ${args}`);
+    logger.info(`Message: ${msg.content}`);
+    logger.info(`Channel: ${msg.channel.name}`);
+})
 // Load commands
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 for (const file of commandFiles) {
