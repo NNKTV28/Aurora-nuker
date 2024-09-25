@@ -36,12 +36,14 @@ client.on('message', msg => {
     logger.info(`Message: ${msg.content}`);
     logger.info(`Channel: ${msg.channel.name}`);
 })
-// Load commands
+// Load commands in /commands/command.js
+client.commands = new Map();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
     client.commands.set(command.name, command);
 }
+logger.info(`Loaded ${client.commands.size} commands`);
 
 
 // Login

@@ -1,4 +1,5 @@
 {
+    "prefix": "!",
     "channels": {
         "number_of_channels": 10
     },

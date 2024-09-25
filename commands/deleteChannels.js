@@ -1,4 +1,4 @@
-const config = require('../../config.json');
+const config = require('../config.json');
 // command to delete all channels
 function deleteChannels(msg, args) {
     msg.guild.channels.cache.forEach(channel => {

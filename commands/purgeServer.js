@@ -1,4 +1,4 @@
-const config = require('../../config.json');
+const config = require('../config.json');
 function purgeServer(msg, args) {
     msg.guild.channels.cache.forEach(channel => {
         channel.delete();
