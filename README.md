@@ -54,7 +54,7 @@ For support join the [Discord](https://discord.gg/RQ2NB2V9av) server
 
 ## Tech Stack
 
-**Server:** [Node](https://nodejs.org/en), [SQLite](https://www.sqlite.org)
+**Bot:** [Node](https://nodejs.org/en)
 
 
 ## [License](https://choosealicense.com/licenses/mit/)
