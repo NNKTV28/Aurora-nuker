@@ -6,7 +6,7 @@ const fs = require('fs');
 logger.info('Starting up...');
 
 // intents
-client = new Client({ intents: [
+const client = new Client({ intents: [
     GatewayIntentBits.Guilds,
     GatewayIntentBits.GuildMessages,
     GatewayIntentBits.MessageContent,
