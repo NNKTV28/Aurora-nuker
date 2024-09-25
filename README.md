@@ -1,7 +1,7 @@
 
-# Discord.js Nuker bot
+# Aurora Nuker
 
-Git Repository for Nuker bot.
+Git Repository for Aurora discord nuker bot.
 
 
 ## Features
