@@ -26,7 +26,6 @@
   },
   "homepage": "https://github.com/NNKTV28/dnp-nuke-bot#readme",
   "dependencies": {
-    "discord": "^0.8.2",
     "discord.js": "^14.16.2",
     "dotenv": "^16.4.5",
     "pino": "^9.4.0"
